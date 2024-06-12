@@ -9,7 +9,9 @@ let keys = {
   ArrowRight: false,
 };
 
-let player = {};
+let player = {
+  speed: 5,
+};
 
 startScreen.addEventListener("click", start);
 
@@ -45,7 +47,22 @@ function keyRelease(event) {
 }
 
 function gamePlay() {
+  let car = document.querySelector(".car");
   if (player.start) {
+    if (keys.ArrowUp) {
+      player.y = player.y - player.speed;
+    }
+    if (keys.ArrowDown) {
+      player.y = player.y + player.speed;
+    }
+    if (keys.ArrowLeft) {
+      player.x = player.x - player.speed;
+    }
+    if (keys.ArrowRight) {
+      player.x = player.x + player.speed;
+    }
+    car.style.left = player.x + "px";
+    car.style.top = player.y + "px";
     requestAnimationFrame(gamePlay);
   }
 }
@@ -59,4 +76,13 @@ function start() {
 
   //end code of game player.start = false
   requestAnimationFrame(gamePlay);
+  //lets make a car
+  let car = document.createElement("div");
+  car.innerHTML = "Car";
+  car.className = "car";
+  gameArea.append(car);
+  //   console.log(car.offsetLeft, car.offsetTop);
+  player.x = car.offsetLeft;
+  player.y = car.offsetTop;
+  console.log(player);
 }
