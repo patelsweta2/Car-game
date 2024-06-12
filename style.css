@@ -5,7 +5,17 @@
 .car {
   position: absolute;
   bottom: 100px;
+  left: 200px;
   width: 50px;
   height: 100px;
   background-color: red;
+}
+
+.gameArea {
+  background-color: rgb(60, 13, 13);
+  width: 300px;
+  height: 100vh;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
 }
