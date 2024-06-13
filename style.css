@@ -2,7 +2,8 @@
   display: none;
 }
 
-.car {
+.car,
+.enemy {
   position: absolute;
   bottom: 100px;
   left: 200px;
