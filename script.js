@@ -49,6 +49,7 @@ function keyRelease(event) {
 function gamePlay() {
   let car = document.querySelector(".car");
   let road = gameArea.getBoundingClientRect();
+  moveLines();
   console.log(road);
   if (player.start) {
     if (keys.ArrowUp && player.y > road.top) {
@@ -69,6 +70,18 @@ function gamePlay() {
   }
 }
 
+function moveLines() {
+  const dividers = document.querySelectorAll(".divider");
+  dividers.forEach((divider) => {
+    console.log("y", divider.y);
+    if (divider.y >= 800) {
+      divider.y = divider.y - 800;
+    }
+    divider.y = divider.y + player.speed;
+    divider.style.top = divider.y + "px";
+  });
+}
+
 function start() {
   console.log("clicked");
   //once clicked hide start screen and show game area
@@ -80,7 +93,8 @@ function start() {
   for (let x = 0; x <= 4; x++) {
     let divider = document.createElement("div");
     divider.className = "divider";
-    divider.style.top = x * 148 + "px";
+    divider.y = x * 160;
+    divider.style.top = divider.y + "px";
     gameArea.append(divider);
   }
 
