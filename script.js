@@ -54,13 +54,13 @@ function gamePlay() {
     if (keys.ArrowUp && player.y > road.top) {
       player.y = player.y - player.speed;
     }
-    if (keys.ArrowDown && player.y < road.bottom) {
+    if (keys.ArrowDown && player.y < road.bottom - 125) {
       player.y = player.y + player.speed;
     }
     if (keys.ArrowLeft && player.x > 0) {
       player.x = player.x - player.speed;
     }
-    if (keys.ArrowRight && player.x < road.width - 50) {
+    if (keys.ArrowRight && player.x < road.width - 60) {
       player.x = player.x + player.speed;
     }
     car.style.left = player.x + "px";
@@ -75,6 +75,14 @@ function start() {
   startScreen.classList.add("hide");
   gameArea.classList.remove("hide");
   player.start = true;
+
+  // lets make a divider:
+  for (let x = 0; x <= 4; x++) {
+    let divider = document.createElement("div");
+    divider.className = "divider";
+    divider.style.top = x * 148 + "px";
+    gameArea.append(divider);
+  }
 
   //end code of game player.start = false
   requestAnimationFrame(gamePlay);

@@ -12,10 +12,18 @@
 }
 
 .gameArea {
-  background-color: rgb(60, 13, 13);
+  background-color: rgb(36, 34, 34);
   width: 300px;
-  height: 100vh;
+  height: 95vh;
   position: relative;
   margin: auto;
   overflow: hidden;
+}
+
+.divider {
+  position: absolute;
+  height: 100px;
+  width: 10px;
+  background-color: white;
+  margin-left: 145px;
 }
