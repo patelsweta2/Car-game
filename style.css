@@ -6,16 +6,22 @@
 .enemy {
   position: absolute;
   bottom: 100px;
-  left: 200px;
+  margin: auto;
   width: 50px;
   height: 100px;
-  background-color: red;
+  background-color: white;
+  line-height: 38px;
+  font-size: 1.7rem;
+  text-align: center;
+  vertical-align: middle;
+  background-image: url(car2.png);
+  background-size: cover;
 }
 
 .gameArea {
   background-color: rgb(36, 34, 34);
-  width: 300px;
-  height: 95vh;
+  width: 400px;
+  height: 100vh;
   position: relative;
   margin: auto;
   overflow: hidden;
@@ -26,5 +32,32 @@
   height: 100px;
   width: 10px;
   background-color: white;
-  margin-left: 145px;
+  margin-left: 195px;
+}
+
+.score {
+  background-color: rgb(43, 41, 41);
+  height: 70px;
+  text-align: center;
+  color: white;
+  font-size: 3;
+  padding-top: 10px;
+  font-family: fantasy;
+}
+
+.startScreen {
+  position: absolute;
+  background-color: red;
+  left: 25%;
+  top: 100px;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 10px;
+  box-shadow: 7px 7px 5px gray;
+  padding: 15px;
+  margin: auto;
+  width: 50%;
+  font-family: sans-serif;
 }
